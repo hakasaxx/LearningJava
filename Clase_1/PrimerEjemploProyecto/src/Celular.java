@@ -44,5 +44,6 @@ public class Celular {
         System.out.println("Numero: "+this.numero);
         System.out.println("Marca: "+this.marca);
         System.out.println("Pantalla: "+this.pantalla);
+	System.out.println("--------------------")
     }
 }
