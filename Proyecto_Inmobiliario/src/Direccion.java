@@ -36,4 +36,7 @@ public class Direccion {
     public void setComuna(String comuna) {
         this.comuna = comuna;
     }
+    public String toString(){
+        return calle + "N°" + this.getNumero();
+    }
 }
