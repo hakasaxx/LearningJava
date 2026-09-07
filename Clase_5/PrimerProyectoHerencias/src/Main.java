@@ -11,4 +11,5 @@ void main() {
     System.out.println("--- DOCENTES ---");
     Docente docente1 = new Docente("Arturo", 41, 'M', "PPO", "Ing. Inormatica");
     docente1.imprimir();
+    Docente docente2 = new Docente("Mish", 128, 'X', "mishmish" );
 }
