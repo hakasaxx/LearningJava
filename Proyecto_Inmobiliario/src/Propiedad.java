@@ -80,5 +80,6 @@ public abstract class Propiedad implements Tasar {
     public void setNumBannos(int numBannos) {
         this.numBannos = numBannos;
     }
+
     public abstract void imprimirInformacion();
 }

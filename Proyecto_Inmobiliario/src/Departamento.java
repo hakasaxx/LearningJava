@@ -1,4 +1,4 @@
-public class Departamento extends Propiedad{
+public final class Departamento extends Propiedad{
     private final double FACTOR_POR_PISO = 0.35;
     private int piso;
     private boolean bodega;
