@@ -2,13 +2,14 @@ public final class Bebida extends Producto{
     private boolean light;
     private boolean gasificada;
 
-    public Bebida(String nombre, String proveedor, int precio, boolean light, boolean gasificada) {
+    public Bebida(String nombre, String proveedor,
+                  int precio, boolean light,
+                  boolean gasificada) {
         super(nombre, proveedor, precio);
         this.light = light;
         this.gasificada = gasificada;
     }
-
-    public Bebida() {
+    public Bebida(){
         super();
         this.light = false;
         this.gasificada = false;
@@ -30,6 +31,7 @@ public final class Bebida extends Producto{
         this.gasificada = gasificada;
     }
 
+
     @Override
     public double calcularDescuento() {
         return this.getPrecio()*Calculable.DCTO_BEBIDA;
@@ -39,5 +41,16 @@ public final class Bebida extends Producto{
     public double calcularTotalPagar() {
         double total = this.getPrecio()-this.calcularDescuento();
         return total*(1 + Calculable.IVA);
+    }
+
+    @Override
+    public String toString() {
+        return "Bebida{" +
+                "light=" + light +
+                ", gasificada=" + gasificada +
+                ", nombre='" + nombre + '\'' +
+                ", proveedor='" + proveedor + '\'' +
+                ", precio=" + precio +
+                '}';
     }
 }

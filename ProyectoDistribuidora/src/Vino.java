@@ -1,13 +1,23 @@
-public final class Vino extends Producto {
-    private double gradoAlcohol;
-    public Vino(String nombre, String proveedor, int precio, double gradoAlcohol) {
+public final class Vino extends Producto{
+    private double gradoAlcoholico;
+
+    public Vino(String nombre, String proveedor,
+                int precio, double gradoAlcoholico) {
         super(nombre, proveedor, precio);
-        this.gradoAlcohol = gradoAlcohol;
+        this.gradoAlcoholico = gradoAlcoholico;
     }
 
     public Vino() {
         super();
-        this.gradoAlcohol = 0;
+        this.gradoAlcoholico = 0;
+    }
+
+    public double getGradoAlcoholico() {
+        return gradoAlcoholico;
+    }
+
+    public void setGradoAlcoholico(double gradoAlcoholico) {
+        this.gradoAlcoholico = gradoAlcoholico;
     }
 
     @Override
@@ -19,5 +29,15 @@ public final class Vino extends Producto {
     public double calcularTotalPagar() {
         double total = this.getPrecio()-this.calcularDescuento();
         return total*(1 + Calculable.IVA);
+    }
+
+    @Override
+    public String toString() {
+        return "Vino{" +
+                "gradoAlcoholico=" + gradoAlcoholico +
+                ", nombre='" + nombre + '\'' +
+                ", proveedor='" + proveedor + '\'' +
+                ", precio=" + precio +
+                '}';
     }
 }

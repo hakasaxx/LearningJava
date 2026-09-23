@@ -1,18 +1,18 @@
 public abstract class Producto implements Calculable{
+    ///  + significa public --> TODOS TIENEN ACCESO
+    ///  - significa private --> SOLO la clase tiene acceso
+    ///  # significa protected--> SOLO LA FAMILIA tiene acceso
     protected String nombre;
     protected String proveedor;
     protected int precio;
 
     public Producto(String nombre, String proveedor, int precio) {
-        this.nombre = nombre;
-        this.proveedor = proveedor;
-        this.precio = precio;
+        this.setNombre(nombre);
+        this.setProveedor(proveedor);
+        this.setPrecio(precio);
     }
-
-    public Producto() {
-        this.nombre = "NO INFO";
-        this.proveedor = "NO INFO";
-        this.precio = 0;
+    public Producto(){
+        this("NO info","NO info",0);
     }
 
     public String getNombre() {
@@ -21,7 +21,7 @@ public abstract class Producto implements Calculable{
 
     public void setNombre(String nombre) {
         if(nombre.isEmpty() || nombre == null){
-            System.out.println("NOMBRE VACIO Q WEA");
+            throw new IllegalArgumentException("NO puede ser vacio!!");
         } else {
             this.nombre = nombre.trim();
         }
@@ -32,10 +32,10 @@ public abstract class Producto implements Calculable{
     }
 
     public void setProveedor(String proveedor) {
-        if(proveedor.isEmpty() || proveedor == null){
-            System.out.println("PROOVEDOR VACIO NO WEI");
-        } else{
-            this.proveedor = proveedor;
+        if(proveedor.isEmpty() || proveedor ==null){
+            throw new IllegalArgumentException("NO puede ser vacio");
+        } else {
+            this.proveedor = proveedor.trim();
         }
     }
 
@@ -44,10 +44,10 @@ public abstract class Producto implements Calculable{
     }
 
     public void setPrecio(int precio) {
-        if(precio >0){
+        if(precio >0) {
             this.precio = precio;
         }else {
-            System.out.println("DEBE SER MAYOR A CERO");
+            throw new IllegalArgumentException("Error debe ser mayor a cero");
         }
     }
 }
